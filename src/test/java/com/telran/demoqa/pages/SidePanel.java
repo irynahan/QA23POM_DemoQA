@@ -18,13 +18,19 @@ public class SidePanel extends PageBase {
         return new BookStorePage(driver);
     }
 
-    @FindBy(xpath = "//li[@class='btn btn-light active']/*[.='Book Store']")
+    @FindBy(css = ".show #item-2")
     WebElement bookStoreBtn;
 
     public BookStorePage getBookStore() {
-        clickWithJSExecutor(bookStoreBtn,0,500);
+        clickWithJSExecutor(bookStoreBtn, 0, 500);
         return new BookStorePage(driver);
     }
 
+    @FindBy(css = ".show #item-3")
+    WebElement profileBtn;
 
+    public ProfilePage clickOnProfileButton() {
+        clickWithJSExecutor(profileBtn,0,300);
+        return new ProfilePage(driver);
+    }
 }

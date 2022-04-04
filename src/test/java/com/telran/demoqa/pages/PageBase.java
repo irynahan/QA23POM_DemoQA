@@ -1,14 +1,15 @@
 package com.telran.demoqa.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public abstract class PageBase {
+import java.io.File;
+import java.io.IOException;
+
+public class PageBase {
 
     protected WebDriver driver;
 
@@ -47,6 +48,18 @@ public abstract class PageBase {
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void takeScreenshot(String pathToFile) {
+
+        File tmp = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = new File(pathToFile);
+
+        try {
+            Files.copy(tmp,screenshot);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
