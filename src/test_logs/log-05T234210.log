@@ -1,0 +1,37 @@
+23:42:11 DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\Vitalii\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml"
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null] -1364512487
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ADDING NODE BookStoreTests.ensurePreconditions()[pri:0, instance:null] 188504680
+23:42:11 DEBUG org.testng.internal.Graph - [Graph]   ADDING PREDECESSOR FOR BookStoreTests.ensurePreconditions()[pri:0, instance:null] ==> TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null]
+23:42:11 DEBUG org.testng.internal.Graph - [Graph]   REMOVED TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null] FROM INDEPENDENT OBJECTS
+23:42:11 DEBUG org.testng.internal.Graph - [Graph]   ADDING PREDECESSOR FOR BookStoreTests.ensurePreconditions()[pri:0, instance:null] ==> TestBase.setUp()[pri:0, instance:null]
+23:42:11 DEBUG org.testng.internal.Graph - [Graph]   REMOVED TestBase.setUp()[pri:0, instance:null] FROM INDEPENDENT OBJECTS
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.setUp()[pri:0, instance:null] 691698322
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ================ SORTING
+23:42:11 DEBUG org.testng.internal.Graph - [Graph]   ADDING PREDECESSOR FOR BookStoreTests.ensurePreconditions()[pri:0, instance:null] ==> TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null]
+23:42:11 DEBUG org.testng.internal.Graph - [Graph]   ADDING PREDECESSOR FOR BookStoreTests.ensurePreconditions()[pri:0, instance:null] ==> TestBase.setUp()[pri:0, instance:null]
+23:42:11 DEBUG org.testng.internal.Graph - [Graph]   REMOVED PRED TestBase.setUp()[pri:0, instance:null] FROM NODE BookStoreTests.ensurePreconditions()[pri:0, instance:null]
+23:42:11 DEBUG org.testng.internal.Graph - [Graph]   REMOVED PRED TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null] FROM NODE BookStoreTests.ensurePreconditions()[pri:0, instance:null]
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] =============== DONE SORTING
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ====== SORTED NODES
+23:42:11 DEBUG org.testng.internal.Graph - [Graph]               TestBase.setUp()[pri:0, instance:null]
+23:42:11 DEBUG org.testng.internal.Graph - [Graph]               TestBase.startTest(java.lang.reflect.Method,[Ljava.lang.Object;)[pri:0, instance:null]
+23:42:11 DEBUG org.testng.internal.Graph - [Graph]               BookStoreTests.ensurePreconditions()[pri:0, instance:null]
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ====== END SORTED NODES
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.stopTest(org.testng.ITestResult)[pri:0, instance:null] 1233888121
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ADDING NODE TestBase.tearDown()[pri:0, instance:null] -1284204823
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ================ SORTING
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] =============== DONE SORTING
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ====== SORTED NODES
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ====== END SORTED NODES
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ADDING NODE BookStoreTests.isBookFromCollectionTest()[pri:0, instance:com.telran.demoqa.tests.BookStoreTests@5b247367] -459395665
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ================ SORTING
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] =============== DONE SORTING
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ====== SORTED NODES
+23:42:11 DEBUG org.testng.internal.Graph - [Graph] ====== END SORTED NODES
+23:42:11 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Vitalii\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml
+
+23:42:16 INFO  com.telran.demoqa.tests.TestBase - Start test: isBookFromCollectionTest
+23:42:20 INFO  com.telran.demoqa.tests.TestBase - Test result: PASSED
+23:42:20 INFO  com.telran.demoqa.tests.TestBase - Stop test: isBookFromCollectionTest
+23:42:20 INFO  com.telran.demoqa.tests.TestBase - ===========================================================

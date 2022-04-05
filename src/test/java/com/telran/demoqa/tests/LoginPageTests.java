@@ -19,15 +19,14 @@ public class LoginPageTests extends TestBase{
     @Test
     public void loginPositiveTest() {
         new LoginPage(driver).login(UserData.USER_NAME,UserData.USER_PASSWORD)
-                .verifyUserName("neuer")
-                .logout();
+                .verifyUserName("neuer").logout();
     }
     @Test
     public void loginPositiveWithAssertTest() {
 
-        new LoginPage(driver).closeBanner();
+        //new LoginPage(driver).closeBanner();
         new LoginPage(driver).login(UserData.USER_NAME,UserData.USER_PASSWORD)
-                .isAccountAssert("neuer")
+                .isAccountAssert("irhan")
                 .logout();
     }
 

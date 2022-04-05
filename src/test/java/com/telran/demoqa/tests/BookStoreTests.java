@@ -42,10 +42,20 @@ public class BookStoreTests extends TestBase {
 
     @Test
     public void deleteBookFromCollectionTest() {
-        String text = "Git";
+        String text = "Git Pocket Guide";
         new BookStorePage(driver).typeInSearchFieldInput(text).clickByFirstBook().closeBanner();
         new BookStorePage(driver).addToYourCollection();
         new SidePanel(driver).clickOnProfileButton();
         new ProfilePage(driver).clickOnTrashToDeleteBook();
+        Assert.assertFalse(new ProfilePage(driver).isBookInProfile(text));
+    }
+
+    @Test
+    public void isBookInCollectionTest() {
+        String text = "Git Pocket Guide";
+        new BookStorePage(driver).typeInSearchFieldInput(text).clickByFirstBook().closeBanner();
+        new BookStorePage(driver).addToYourCollection();
+        new SidePanel(driver).clickOnProfileButton();
+        Assert.assertTrue(new ProfilePage(driver).isBookInProfile(text));
     }
 }

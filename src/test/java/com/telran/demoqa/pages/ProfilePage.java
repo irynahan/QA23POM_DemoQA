@@ -56,4 +56,16 @@ public class ProfilePage extends PageBase {
         driver.switchTo().alert().accept();
         return this;
     }
+
+    @FindBy(xpath = "//span[@class='mr-2']/a")
+    List<WebElement> booksNameList;
+
+    public boolean isBookInProfile(String text){
+        for (WebElement book : booksNameList){
+            if (book.getText().equals(text)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
