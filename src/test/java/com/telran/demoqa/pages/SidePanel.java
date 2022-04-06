@@ -1,5 +1,7 @@
 package com.telran.demoqa.pages;
 
+import com.telran.demoqa.pages.bookStorePages.BookStorePage;
+import com.telran.demoqa.pages.bookStorePages.ProfilePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,8 +31,16 @@ public class SidePanel extends PageBase {
     @FindBy(css = ".show #item-3")
     WebElement profileBtn;
 
-    public ProfilePage clickOnProfileButton() {
+    public ProfilePage getProfile() {
         clickWithJSExecutor(profileBtn,0,300);
         return new ProfilePage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Alerts']")
+    WebElement alerts;
+
+    public AlertPage selectAlert() {
+        clickWithJSExecutor(alerts,0,300);
+        return new AlertPage(driver);
     }
 }
