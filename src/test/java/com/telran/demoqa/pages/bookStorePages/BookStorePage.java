@@ -1,12 +1,13 @@
-package com.telran.demoqa.pages;
+package com.telran.demoqa.pages.bookStorePages;
 
+import com.telran.demoqa.pages.PageBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.Collection;
+import java.util.List;
 
-public class BookStorePage extends PageBase{
+public class BookStorePage extends PageBase {
 
     public BookStorePage(WebDriver driver) {
         super(driver);
@@ -51,10 +52,30 @@ public class BookStorePage extends PageBase{
     WebElement addToCollectionBtn;
 
     public BookStorePage addToYourCollection() {
+        closeBanner();
         clickWithJSExecutor(addToCollectionBtn,0,300);
         pause(1000);
         driver.switchTo().alert().accept();
         return this;
     }
 
+    @FindBy(css = ".mr-2")
+    List<WebElement> listOfBooks;
+
+    @FindBy(css = ".text-left.fullButton")
+    WebElement backToBookStoreBtn;
+
+    public BookStorePage addTwoBooks() {
+
+        listOfBooks.get(0).click();
+        pause(1000);
+        addToYourCollection();
+        pause(1000);
+        clickWithJSExecutor(backToBookStoreBtn,0,500);
+        listOfBooks.get(1).click();
+        pause(1000);
+        addToYourCollection();
+
+        return this;
+    }
 }

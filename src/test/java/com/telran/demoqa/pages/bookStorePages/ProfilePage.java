@@ -1,10 +1,9 @@
-package com.telran.demoqa.pages;
+package com.telran.demoqa.pages.bookStorePages;
 
+import com.telran.demoqa.pages.PageBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.List;
@@ -31,7 +30,7 @@ public class ProfilePage extends PageBase {
     }
 
     public ProfilePage isAccountAssert(String uName) {
-        shouldHaveText(user,uName,15);
+        shouldHaveText(user, uName, 15);
         Assert.assertTrue(user.isDisplayed());
         return this;
     }
@@ -68,4 +67,38 @@ public class ProfilePage extends PageBase {
         }
         return false;
     }
+
+    @FindBy(xpath = "//span[@class='mr-2']/a")
+    WebElement nameOfBook;
+
+    @FindBy(xpath = "//span[@class='mr-2']/a")
+    List<WebElement> listNameOfBook;
+
+    public ProfilePage isBookNameInProfileDisplayed(String bName) {
+        shouldHaveText(nameOfBook, bName, 15);
+        Assert.assertTrue(nameOfBook.isDisplayed());
+        return new ProfilePage(driver);
+    }
+
+    public boolean isBookInProfile(String bookName) {
+        for (WebElement el : listNameOfBook) {
+            if (el.getText().equals(bookName)) {
+                return true;
+            }
+        }
+            return false;
+        }
+
+        @FindBy(css = ".di")
+        WebElement deleteAllBookBtn;
+
+    public ProfilePage deleteAllBook() {
+        pause(1000);
+        clickWithJSExecutor(deleteAllBookBtn,0,500);
+        click(okBtn);
+        pause(1000);
+        driver.switchTo().alert().accept();
+        return this;
+    }
 }
+
