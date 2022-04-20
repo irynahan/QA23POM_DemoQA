@@ -40,7 +40,7 @@ public class TestBase {
             logger.info("Test result: PASSED");
         } else {
             logger.error("Test result: FAILED");
-            String screen = "screenshots/screen-" + (System.currentTimeMillis()/1000%3600 + ".png");
+            String screen = "screenshots/screen-" + (System.currentTimeMillis()/1000%3600) + ".png";
             new PageBase(driver).takeScreenshot(screen);
         }
         logger.info("Stop test: " + result.getMethod().getMethodName());
