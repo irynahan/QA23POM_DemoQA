@@ -12,7 +12,7 @@ public class LoginPageTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
-        new HomePage(driver).getBookStore();
+        new HomePage(driver).getBookStorePage();
         new BookStorePage(driver).clickOnLoginButton();
         new LoginPage(driver).closeBanner();
     }

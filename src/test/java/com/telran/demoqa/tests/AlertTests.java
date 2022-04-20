@@ -11,7 +11,7 @@ public class AlertTests extends TestBase{
 
     @BeforeMethod
     public void ensurePreconditions() {
-        new HomePage(driver).getAlertFrameAndWindows();
+        new HomePage(driver).getAlertFrameAndWindowsPage();
         new SidePanel(driver).selectAlert();
     }
 

@@ -14,7 +14,7 @@ public class HomePage extends PageBase{
     @FindBy(xpath = "//div[@class='category-cards']/div[.='Book Store Application']")
     WebElement bookStoreApplicationBlock;
 
-    public BookStorePage getBookStore() {
+    public BookStorePage getBookStorePage() {
         clickWithJSExecutor(bookStoreApplicationBlock,0,300);
         return new BookStorePage(driver);
     }
@@ -22,8 +22,24 @@ public class HomePage extends PageBase{
     @FindBy(xpath = "//div[@class='category-cards']/div[.='Alerts, Frame & Windows']")
     WebElement alertFrameAndWindow;
 
-    public SidePanel getAlertFrameAndWindows() {
+    public SidePanel getAlertFrameAndWindowsPage() {
         clickWithJSExecutor(alertFrameAndWindow,0,300);
+        return new SidePanel(driver);
+    }
+
+    @FindBy(xpath = "//div//h5[.='Widgets']")
+    WebElement widgets;
+
+    public SidePanel getWidgetsPage() {
+        clickWithJSExecutor(widgets,0,300);
+        return new SidePanel(driver);
+    }
+
+    @FindBy(xpath = "//div//h5[.='Elements']")
+    WebElement elements;
+
+    public SidePanel getElementsPage() {
+        clickWithJSExecutor(elements,0,300);
         return new SidePanel(driver);
     }
 }
