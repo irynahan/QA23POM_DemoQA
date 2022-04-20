@@ -43,4 +43,28 @@ public class SidePanel extends PageBase {
         clickWithJSExecutor(alerts,0,300);
         return new AlertPage(driver);
     }
+
+    @FindBy(xpath = "//span[.='Browser Windows']")
+    WebElement browserWindows;
+
+    public BrowserWindowsPage selectWindows() {
+        clickWithJSExecutor(browserWindows,0,300);
+        return new BrowserWindowsPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Select Menu']")
+    WebElement selectMenu;
+
+    public SelectMenuPage selectSelectMenu() {
+        clickWithJSExecutor(selectMenu,0,500);
+        return new SelectMenuPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Buttons']")
+    WebElement selectButtons;
+
+    public ButtonsPage selectButtons() {
+        clickWithJSExecutor(selectButtons,0,500);
+        return new ButtonsPage(driver);
+    }
 }

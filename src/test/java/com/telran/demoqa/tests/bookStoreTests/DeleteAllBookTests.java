@@ -14,7 +14,7 @@ public class DeleteAllBookTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
-        new HomePage(driver).getBookStore().pause(1000);
+        new HomePage(driver).getBookStorePage().pause(1000);
         new BookStorePage(driver).clickOnLoginButton();
         new LoginPage(driver).closeBanner();
         new LoginPage(driver).login(UserData.USER_NAME,UserData.USER_PASSWORD);
