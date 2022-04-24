@@ -1,5 +1,6 @@
 package com.telran.demoqa.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,4 +51,24 @@ public class BrowserWindowsPage extends PageBase {
         Assert.assertTrue(samplePageText.isDisplayed());
         return this;
     }
+
+
+    @FindBy (id = "messageWindowButton")
+    WebElement newWindowMessageBtn;
+
+    public BrowserWindowsPage clickOnNewWindowMessageButton() {
+        click(newWindowMessageBtn);
+        List<String> windows = new ArrayList<>(driver.getWindowHandles());
+        this.driver = driver.switchTo().window(windows.get(1));
+        return this;
+    }
+
+
+    @FindBy (xpath = "//body")
+    WebElement newWindowMessageText;
+
+    public String getTextFromNewWindowMessageText() {
+        return newWindowMessageText.getText();
+    }
+
 }

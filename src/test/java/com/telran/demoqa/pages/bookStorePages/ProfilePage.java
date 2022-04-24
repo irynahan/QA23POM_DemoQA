@@ -65,7 +65,7 @@ public class ProfilePage extends PageBase {
                 return true;
             }
         }
-        return false;
+       return false;
     }
 
     @FindBy(xpath = "//span[@class='mr-2']/a")
@@ -80,17 +80,17 @@ public class ProfilePage extends PageBase {
         return new ProfilePage(driver);
     }
 
-    public boolean isBookInProfile(String bookName) {
+    public boolean isBookInProfileV2(String bookName) {
         for (WebElement el : listNameOfBook) {
             if (el.getText().equals(bookName)) {
                 return true;
             }
         }
             return false;
-        }
+    }
 
-        @FindBy(css = ".di")
-        WebElement deleteAllBookBtn;
+    @FindBy(css = ".di")
+    WebElement deleteAllBookBtn;
 
     public ProfilePage deleteAllBook() {
         pause(1000);

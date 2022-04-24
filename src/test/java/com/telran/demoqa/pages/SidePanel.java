@@ -67,4 +67,10 @@ public class SidePanel extends PageBase {
         clickWithJSExecutor(selectButtons,0,500);
         return new ButtonsPage(driver);
     }
+
+    public ProfilePage clickOnProfileButton() {
+        clickWithJSExecutor(profileBtn,0,300);
+        return new ProfilePage(driver);
+    }
+
 }

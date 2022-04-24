@@ -85,4 +85,31 @@ public class SelectMenuPage extends PageBase{
         }
         return this;
     }
+
+    @FindBy (xpath = "//div[@class=' css-1hwfws3']//div[contains(text(),'Select Option')]")
+    WebElement selectValueDropdown;
+
+    public SelectMenuPage clickOnSelectValueDropdown(String option){
+        clickWithJSExecutor(selectValueDropdown, 0, 300);
+        WebElement selectElement = driver.findElement(By.xpath(String.format("//div[text()='%s']",option)));
+        click(selectElement);
+        return this;
+    }
+
+    @FindBy (xpath = "//div[@id='selectOne']")
+    WebElement selectOneDropdown;
+
+    public SelectMenuPage clickOnSelectOneDropdown(String seletedOption) {
+        click(selectOneDropdown);
+        WebElement selectElement = driver.findElement(By.xpath(String.format("//div[text()='%s']", seletedOption)));
+        click(selectElement);
+        return this;
+    }
+
+    @FindBy (xpath = "//div[@class=' css-1uccc91-singleValue']")
+    WebElement oneDropdownOption;
+
+    public String getTextValueOfSelectOne() {
+        return oneDropdownOption.getText();
+    }
 }

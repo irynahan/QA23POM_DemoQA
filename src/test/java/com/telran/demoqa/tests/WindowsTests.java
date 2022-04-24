@@ -25,4 +25,10 @@ public class WindowsTests extends TestBase{
     public void newWindowTest() {
         new BrowserWindowsPage(driver).clickOnNewWindowButton().isSampleTextDisplayed("This is a sample page");
     }
+
+    @Test
+    public void newWindowMessageTest(){
+        new BrowserWindowsPage(driver).clickOnNewWindowMessageButton();
+        Assert.assertTrue(new BrowserWindowsPage(driver).getTextFromNewWindowMessageText().contains("Please share this website with your friends"));
+    }
 }
