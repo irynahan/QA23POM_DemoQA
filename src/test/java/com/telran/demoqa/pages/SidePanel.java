@@ -73,4 +73,34 @@ public class SidePanel extends PageBase {
         return new ProfilePage(driver);
     }
 
+    @FindBy(xpath = "//span[.='Frames']")
+    WebElement selectFrames;
+
+    public FramesPage selectFrames() {
+        clickWithJSExecutor(selectFrames,0,500);
+        return new FramesPage(driver);
+    }
+    @FindBy(xpath = "//span[.='Nested Frames']")
+    WebElement selectNestedFrames;
+
+    public NestedFramesPage selectNestedFrames() {
+        clickWithJSExecutor(selectNestedFrames,0,500);
+        return new NestedFramesPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Droppable']")
+    WebElement selectDroppable;
+
+    public DroppablePage selectDroppable() {
+        clickWithJSExecutor(selectDroppable,0,500);
+        return new DroppablePage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Dragabble']")
+    WebElement selectDragabble;
+
+    public DragabblePage getDragabble() {
+        clickWithJSExecutor(selectDragabble, 0, 500);
+        return new DragabblePage(driver);
+    }
 }
