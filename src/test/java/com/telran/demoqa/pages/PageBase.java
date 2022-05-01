@@ -63,4 +63,23 @@ public class PageBase {
             e.printStackTrace();
         }
     }
+
+    public void typeWithJS(WebElement element, int x, int y, String text) {
+        if (text != null) {
+            clickWithJSExecutor(element,x,y);
+            element.clear();
+            element.sendKeys(text);
+        }
+    }
+
+    public void hideFooter() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        js.executeScript("document.querySelector('footer').style.display='none'");
+    }
+
+    public void hideAd() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.getElementById('adplus-anchor').style.display='none'");
+    }
 }
